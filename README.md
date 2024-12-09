@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## Moneyballs - Quasar 2 & Firebase Cloud Firestore (with Vue 3 & Pinia)
 All source code files from the Moneyballs app from the "Quasar 2 & Firebase Cloud Firestore (with Vue 3 & Pinia)" course.
 
