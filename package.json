@@ -5,6 +5,7 @@
   "productName": "Moneyballs",
   "author": "Danny Connell",
   "private": true,
+
   "scripts": {
     "icons": "icongenie generate -i app-icon.png --skip-trim --theme-color 00695c --splashscreen-icon-ratio 25",
     "dev": "quasar dev",
@@ -21,6 +22,7 @@
     "@capacitor/core": "^6.2.0",
     "@capacitor/dialog": "^6.0.0",
     "@quasar/extras": "^1.16.15",
+    "@supabase/supabase-js": "^2.47.3",
     "firebase": "^10.12.5",
     "pinia": "^2.0.11",
     "quasar": "^2.17.4",
@@ -34,7 +36,8 @@
     "@quasar/app-vite": "^1.9.0",
     "autoprefixer": "^10.4.2",
     "electron": "^31.0.1",
-    "postcss": "^8.4.14"
+    "postcss": "^8.4.14",
+    "supabase": "^2.0.0"
   },
   "engines": {
     "node": "^22 || ^18 || ^16",
