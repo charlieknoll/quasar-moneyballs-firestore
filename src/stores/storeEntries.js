@@ -87,34 +87,14 @@ export const useStoreEntries = defineStore("entries", () => {
     actions
   */
 
-  const init = () => {
+  const init = async () => {
     // const storeAuth = useStoreAuth()
-    // entriesCollectionRef = collection(db, 'users', storeAuth.userDetails.id, 'entries')
-    // entriesQueryRef = query(entriesCollectionRef, orderBy('order'))
-    loadEntries();
+    await loadEntries();
   };
 
   const loadEntries = async (showLoader = true) => {
     if (showLoader) entriesLoaded.value = false;
-    // getEntriesSnapshot = onSnapshot(
-    //   entriesQueryRef,
-    //   (querySnapshot) => {
-    //     let entriesFB = [];
-    //     querySnapshot.forEach((doc) => {
-    //       let entry = doc.data();
-    //       entry.id = doc.id;
-    //       entriesFB.push(entry);
-    //     });
-    //     entries.value = entriesFB;
-    //     entriesLoaded.value = true;
-    //   },
-    //   (error) => {
-    //     Dialog.create({
-    //       title: "Error",
-    //       message: error.message,
-    //     });
-    //   }
-    // );
+
     const { data, error } = await supabase.from("entries").select();
     if (error) {
       Dialog.create({
@@ -122,6 +102,7 @@ export const useStoreEntries = defineStore("entries", () => {
         message: error.message,
       });
     } else {
+      console.log("data: ", data);
       entries.value = data;
       entriesLoaded.value = true;
     }
